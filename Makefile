@@ -1,4 +1,4 @@
-ASSETS = logo
+ASSETS = $(shell find ./source -name '*.svg' -exec basename -s '.svg' {} \;)
 
 .PHONY: all
 all: $(ASSETS)
@@ -7,7 +7,10 @@ all: $(ASSETS)
 $(ASSETS): %: %.svg %.png %.jpg
 
 %.svg: source/%.svg
-	@svgcleaner --multipass --stdout $^ | npm exec --yes -- svgo@latest --multipass - | svgcleaner --stdout - > $@
+	svgcleaner --allow-bigger-file --multipass $^ $@
+	npm exec --yes -- svgo@latest --multipass --input $@ --output $@
+	svgcleaner --allow-bigger-file --multipass $@ $@
+	npm exec --yes -- svgo@latest --multipass --input $@ --output $@
 
 %.png: %.svg
 	inkscape --export-filename=$@ $^
@@ -19,5 +22,5 @@ $(ASSETS): %: %.svg %.png %.jpg
 	
 .PHONY: clean
 clean:
-	rm -r $(ASSETS).{svg,png,jpg}
+	rm -r $(foreach asset,$(ASSETS),$(asset).{svg,png,jpg})
 
