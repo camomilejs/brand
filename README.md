@@ -52,7 +52,7 @@ colored yellow (see [Color](#color)).
 The logotype of Camomile comprises of the aforementioned logomark, letters "cam"
 placed to the left of it, and letters "mile" placed to the right of it, thus
 forming the word "camomile". The text part is set in the Rubik font with
-weight 900.
+weight 900 and is colored yellow.
 
 ![Camomile logotype](./logotype.png)
 
