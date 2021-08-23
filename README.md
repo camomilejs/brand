@@ -26,15 +26,13 @@ Examples of **_incorrect_** usage:
 ### Color
 
 The color that is present in all brand assets of _Camomile_ is a bright shade
-of yellow, namely
-[**PANTONE 122 C**](https://www.pantone.com/color-finder/122-C).
-Its official color values are:
+of yellow. The base value is **`#FED141`**; this is the reference value.
+Other color values, according to [colorhexa](https://www.colorhexa.com/fed141),
+are:
 
+- HSL: `45.7º, 99%,  62,5%)`
 - RGB: `254, 209, 65`
-  - Hex: `#FED141`
-- CMYK: `0, 9, 80, 0`
-
-We take the RGB Hex value in our source files.
+- CMYK: `0, 18, 74, 0`
 
 ### Logomark
 
